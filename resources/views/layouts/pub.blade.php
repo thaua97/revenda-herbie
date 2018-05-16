@@ -11,21 +11,21 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <style>
-        body {
+  <style>
+        .mas {
             background: linear-gradient(45deg, #eaa1c2 0%, #6227ae 100%);
             background-image: url('https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&h=1280&w=1366');
             background-repeat: no-repeat;
             
         }
     </style> 
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         @yield('page')
     </div>
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
