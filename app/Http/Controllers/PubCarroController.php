@@ -34,7 +34,7 @@ class PubCarroController extends Controller
 
         $combustiveis = Carro::combust();
 
-        return view('carros.produto', ['reg' => $reg, 'marcas' => $marcas,
+        return view('carros.proposta', ['reg' => $reg, 'marcas' => $marcas,
                                           'comb' => $combustiveis]);
     }
 }

@@ -10,22 +10,61 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
-  <style>
-        .mas {
-            background: linear-gradient(45deg, #eaa1c2 0%, #6227ae 100%);
-            background-image: url('https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&h=1280&w=1366');
-            background-repeat: no-repeat;
-            
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link 
+        type="text/css" 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"  
+        media="screen,projection"
+    />
+    <style>
+        .bgnv{
+            background: linear-gradient(45deg, #6600cc 0%, #a64dff 100%);
         }
-    </style> 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    </style>
 </head>
 <body>
+    <nav class="bgnv">
+        <div class="container nav-wrapper">
+            <a href="/site/" class="brand-logo">Revenda <strong>Herbie</strong></a>
+        </div>
+    </nav>
     <div id="app">
         @yield('page')
     </div>
+    <footer class="page-footer bgnv">
+        <div class="container">
+            <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4"></p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="">Link 4</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2018 Revenda Herbie - <strong>Thauã Borges</strong>
+            <a class="grey-text text-lighten-4 right" href="https://github.com/thaua97">Git Hub</a>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script 
+        type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"
+    >
+    </script>
 </body>
 </html>
