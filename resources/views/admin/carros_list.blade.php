@@ -26,7 +26,9 @@
     <th> Preço R$ </th>
     <th> Combustível </th>
     <th> Data Cad. </th>
+    <th> Foto </th>
     <th> Ações </th>
+    <th> Destaque </th> 
   </tr>
 @forelse($carros as $c)
   <tr>
@@ -47,9 +49,10 @@
       @endif
     </td>
     <td>
+      
         <a href="{{route('carros.edit', $c->id)}}"
             class="btn btn-warning btn-sm" title="Alterar"
-            role="button"><i class="fa fa-edit"></i></a> &nbsp;&nbsp;
+            role="button"><i class="fa fa-edit"></i></a> &nbsp;&nbsp;       
         <form style="display: inline-block"
               method="post"
               action="{{route('carros.destroy', $c->id)}}"
@@ -59,6 +62,17 @@
               <button type="submit" title="Excluir"
                       class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button>
         </form>
+    </td>
+    <td>
+        @if($c->destaque == "")          
+        <a href="{{route('carros.destaque', $c->id)}}"
+          class="btn btn-warning btn-sm" title="Destaque"
+          role="button"><i class="far fa-star"></i></a> &nbsp;&nbsp;
+        @else
+            <a href="{{route('carros.destaque', $c->id)}}"
+                class="btn btn-success btn-sm" title="Destaque"
+                role="button"><i class="fa fa-star"></i></a> &nbsp;&nbsp;
+        @endif 
     </td>
   </tr>
   @if ($loop->last)

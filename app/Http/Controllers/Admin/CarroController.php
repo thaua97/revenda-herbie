@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use App\Carro;
 use App\Marca;
 
@@ -174,4 +175,31 @@ class CarroController extends Controller
                             ->with('status', $car->modelo . ' Excluído!');
         }
     }
+
+    public function graf() {
+        $sql = "select m.nome as marca, 
+                count(c.id) as num from carros c inner join marcas m 
+                on c.marca_id = m.id group by m.nome";
+
+        $dados = DB::select($sql);
+
+        return view('admin.carros_graf', ['dados' => $dados]);
+    }
+    public function destaque($id){
+        $car = Carro::find($id);
+        
+        if ($car->destaque == "*") {
+            $destaque = "";
+        } else {
+            $destaque = "*";
+        }
+
+        $dest = DB::update('update carros set destaque = ? where id = ?', [$destaque, $id]);
+
+        if ($dest) {
+            return redirect()->route('carros.index')->with('status', ($destaque == "*" ? $car->modelo . ' Destacado' 
+                :$car->modelo . ' Fora do destaque'));
+        }
+    }
+
 }

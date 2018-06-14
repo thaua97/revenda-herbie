@@ -1,6 +1,5 @@
 <template>
     <v-app>
-        
         <v-content app>
             <v-jumbotron
             src="https://images.wallpapersden.com/image/download/chevrolet-silverado-and-chevrolet-colorado-z71_59521_1366x768.jpg"
@@ -34,38 +33,16 @@
                 </v-container>
             </v-jumbotron>
             <v-container>
-                <v-layout row>
-                    <v-flex text-xs-left>
-                        <h2 class="display-3 blue--text">
-                            Veiculos a venda
-                        </h2>
-                    </v-flex>
-                </v-layout>
-                <v-divider></v-divider>
-                <v-layout row>
-                    <v-flex xs4 sm4>
-                        <h2 class="display-1 blue--text">
-                            V1
-                        </h2>
-                    </v-flex>
-                </v-layout>    
-            </v-container>
+            <v-layout row>
+                <v-flex text-xs-left>
+                    <h2 class="display-3 blue--text">
+                        Veiculos a venda
+                    </h2>
+                </v-flex>
+            </v-layout>
+                <slot name="lista"></slot>        
+        </v-container>
         </v-content>
-        <v-footer height="auto" class="grey darken-3" app>
-    <v-layout row wrap justify-center>
-      <v-btn
-        v-for="link in links"
-        :key="link"
-        color="white"
-        flat
-      >
-        {{ link }}
-      </v-btn>
-      <v-flex xs12 py-3 text-xs-center white--text>
-        &copy;2018 — <strong>Vuetify</strong>
-      </v-flex>
-    </v-layout>
-  </v-footer>
     </v-app>
 </template>
 <script>

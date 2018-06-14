@@ -140,7 +140,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Veículos por Marca',
-                    'url'  => '#',
+                    'url'  => 'admin/carrosgraf',
                 ],
                 [
                     'text' => 'Novos Clientes',
