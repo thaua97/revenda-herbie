@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Proposta;
 
 class PropostasController extends Controller
@@ -24,16 +26,7 @@ class PropostasController extends Controller
     }
     public function store(Request $request)
     {
-        // obtém todos os campos do formulário
-        $dados = $request->all();
-
-        $inc = Proposta::create($dados);
-
-        if ($inc) {
-            return redirect()->route('site.index')
-                   ->with('status', $request->modelo . ' Proposta efetuada com sucesso!');
-        }
-
+        //
     }
     public function show($id)
     {

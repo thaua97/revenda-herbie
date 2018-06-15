@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="row">
-            <form action="{{route('proposta.store')}}" method="POST" class="col s12">
+            <form action="{{route('cadproposta.store')}}" method="POST" class="col s12">
                 {{ csrf_field()}}
                 <div class="row">
                     <div class="input-field col s6">
