@@ -32,15 +32,15 @@
           <a href="{{route('propostas.show', $p->id)}}"
               class="btn btn-warning btn-sm" title="Vizualizar"
               role="button"><i class="fa fa-edit"></i></a> &nbsp;&nbsp;
-              @if($p->destaque == "")          
+          @if($p->destaque == "")          
+          <a href="{{route('propostas.destaque', $p->id)}}"
+            class="btn btn-default btn-sm" title="Destaque"
+            role="button"><i class="fa fa-star"></i></a> &nbsp;&nbsp;
+          @else
               <a href="{{route('propostas.destaque', $p->id)}}"
-                class="btn btn-default btn-sm" title="Destaque"
-                role="button"><i class="fa fa-star"></i></a> &nbsp;&nbsp;
-              @else
-                  <a href="{{route('propostas.destaque', $p->id)}}"
-                      class="btn btn-success btn-sm" title="Destaque"
-                      role="button"><i class="fa fa-star"></i></a> &nbsp;&nbsp;
-              @endif 
+                  class="btn btn-success btn-sm" title="Destaque"
+                  role="button"><i class="fa fa-star"></i></a> &nbsp;&nbsp;
+          @endif 
       </td>
     </tr>
   
