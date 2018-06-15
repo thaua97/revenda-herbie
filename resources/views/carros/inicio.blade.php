@@ -7,10 +7,10 @@
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-                @if($c->img == '')
-                    <img class="responsive" src="https://png.pngtree.com/element_origin_min_pic/17/04/13/3281ed9397418c690ce9586ef9a416da.jpg">
+                @if(Storage::exists($c->foto))
+                  <img class="responsive" src="{{url('storage/'.$c->foto)}}" alt="foto">
                 @else
-                    <img class="responsive" src="">                    
+                  <img class="responsive" src="https://png.pngtree.com/element_origin_min_pic/17/04/13/3281ed9397418c690ce9586ef9a416da.jpg">
                 @endif
               <a class="btn-floating halfway-fab waves-effect waves-light bgnv" href="{{ route('site.show', $c->id)}}"><i class="material-icons">add</i></a>
             </div>

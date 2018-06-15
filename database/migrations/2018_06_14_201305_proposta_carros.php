@@ -20,6 +20,7 @@ class PropostaCarros extends Migration
             $table->string('email');
             $table->string('proposta');
             $table->string('modelo', 40);
+            $table->timestamps();
         });
     }
     /**

@@ -7,10 +7,10 @@
         <div class="col s12 m4">
             <div class="card">
                 <div class="card-image">
-                    @if($reg->img == '')
-                        <img class="responsive" src="https://png.pngtree.com/element_origin_min_pic/17/04/13/3281ed9397418c690ce9586ef9a416da.jpg">
+                    @if(Storage::exists($reg->foto))
+                        <img class="responsive" src="{{url('storage/'.$reg->foto)}}" alt="foto">
                     @else
-                        <img class="responsive" src="">                    
+                        <img class="responsive" src="https://png.pngtree.com/element_origin_min_pic/17/04/13/3281ed9397418c690ce9586ef9a416da.jpg">
                     @endif
                 </div>
                 <div class="card-content">
@@ -47,7 +47,8 @@
                 </div>
             </div>
             <div class="row">
-                <form action="" method="POST" class="col s12">
+            <form action="{{route('proposta.store')}}" method="POST" class="col s12">
+                {{ csrf_field()}}
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="nome" type="text" name="nome" class="validate">
@@ -60,8 +61,8 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <input type="text" name="{{$reg->modelo}}" hidden>
+                        <input id="email" name="email" type="email" class="validate">
+                        <input type="text" name="modelo" type="text" value="{{$reg->id}}" hidden>
                         <label for="email">Email</label>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Propostas;
+use App\Proposta;
 
 class PropostasController extends Controller
 {
@@ -27,7 +27,7 @@ class PropostasController extends Controller
         // obtém todos os campos do formulário
         $dados = $request->all();
 
-        $inc = Propostas::create($dados);
+        $inc = Proposta::create($dados);
 
         if ($inc) {
             return redirect()->route('site.index')
