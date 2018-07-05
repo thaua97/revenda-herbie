@@ -7,7 +7,9 @@ Route::get('/', function () {
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware' => 'auth'], function() {
    Route::get('/', function() { return view('admin.index'); });
    Route::get('carrodestaque/{id}', 'CarroController@destaque')->name('carros.destaque');
+   Route::get('propdestaque/{id}', 'PropostasController@destaque')->name('propostas.destaque');
    Route::get('carrosgraf', 'CarroController@graf')->name('carros.graf');
+   Route::resource('propostas', 'PropostasController');
    Route::resource('carros', 'CarroController');
    Route::resource('usuarios', 'UserController');
    
@@ -20,6 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('site', 'PubCarroController');
+<<<<<<< HEAD
 Route::resource('proposta', 'PropostasController');
 
 Route::get('/wscarro/{id?}', 'wsController@wsCarro');
@@ -36,3 +39,6 @@ Route::get('/rel', function(){
 
 Route::get('relcarros', 'relatController@relcarros');
 
+=======
+Route::resource('cadproposta', 'PropostasController');
+>>>>>>> ebbb9a8259219899eb50f6d2a5d84d8795818e0b

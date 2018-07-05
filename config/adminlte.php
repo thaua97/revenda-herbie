@@ -168,7 +168,7 @@ return [
                 ],
                 [
                     'text' => 'Propostas',
-                    'url'  => '#',
+                    'url'  => 'admin/propostas',
                 ],
             ],
         ],

@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="row">
-            <form action="{{route('proposta.store')}}" method="POST" class="col s12">
+            <form action="{{route('cadproposta.store')}}" method="POST" class="col s12">
                 {{ csrf_field()}}
                 <div class="row">
                     <div class="input-field col s6">
@@ -55,14 +55,14 @@
                         <label for="nome">Nome</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="cpf" type="text" name="cpf" class="validate">
-                        <label for="cpf">CPF</label>
+                        <input id="telefone" type="text" name="telefone" class="validate">
+                        <label for="telefone">Telefone</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="email" name="email" type="email" class="validate">
-                        <input type="text" name="modelo" type="text" value="{{$reg->id}}" hidden>
+                        <input type="text" name="modelo" type="text" value="{{$reg->modelo}" hidden>
                         <label for="email">Email</label>
                     </div>
                 </div>
