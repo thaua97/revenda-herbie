@@ -21,3 +21,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('site', 'PubCarroController');
 Route::resource('proposta', 'PropostasController');
+
+Route::get('/wscarro/{id?}', 'wsController@wsCarro');
+
+Route::get('/wsxml/{id?}', 'wsController@wsxml');
+
+Route::get('/listaxml/{preco?}', 'wsController@listaxml');
+
+Route::get('/rel', function(){
+    $pdf = App::make('dompdf.wrapper');
+    $pdf->loadHTML('<h1>Test</h1>');
+    return $pdf->stream();
+});
+
+Route::get('relcarros', 'relatController@relcarros');
+
