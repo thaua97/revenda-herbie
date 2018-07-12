@@ -1,25 +1,25 @@
 @extends('layouts.pub')
 @section('page')
-
   <div class="container">
     <div class="row">
+        <div class="col s12">
+            <div style="padding-top:20px;" class="col s12 m1">
+              <button form="search" type="submit" class="btn-floating waves-effect waves-light bgnv">
+                <i class="material-icons">search</i>
+              </button>
+            </div>
+            <div class="col s12 m11">
+                <form id="search" class="" action="{{ route('carros.search')}}" method="post">
+                    {{ csrf_field() }}
+                    <div class="input-field">
+                      <input id="search" name="pesq" class="validate" type="search">
+                      <label for="search">Qual o valor que você procura?</label>
+                    </div>
+                  </form>
+            </div>
+          </div>
         <h4>Destaques</h4>
-        <div class="col s12 m8">
-          <div style="padding-top:20px;" class="col s12 m2">
-            <button form="search" type="submit" class="btn-floating waves-effect waves-light red">
-              <i class="material-icons">search</i>
-            </button>
-          </div>
-          <div class="col s12 m10">
-              <form id="search" class="" action="{{ route('carros.search')}}" method="post">
-                  {{ csrf_field() }}
-                  <div class="input-field">
-                    <input id="search" name="pesq" class="validate" type="search">
-                  </div>
-                </form>
-          </div>
-        </div>
-        <div class="divider"></div>
+        
         <br>
         @forelse($carros as $d)
         @if($d->destaque == "*")
@@ -44,6 +44,7 @@
         @empty
         @endforelse
     </div>
+    <div class="divider"></div>
     <div class="row">
         <h4>Outros modelos</h4>
         <div class="divider"></div>

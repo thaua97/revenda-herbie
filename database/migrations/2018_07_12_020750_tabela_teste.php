@@ -21,6 +21,7 @@ class TabelaTeste extends Migration
             $table->integer('carro_id')->unsigned();
             $table->foreign('carro_id')->references('id')->on('carros')
                             ->onDelete('restrict');
+            $table->string('modelo');
             $table->timestamps();
         });
     }

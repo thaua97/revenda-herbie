@@ -12,7 +12,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware' => 'auth'], 
    Route::resource('propostas', 'PropostasController');
    Route::resource('carros', 'CarroController');
    Route::resource('usuarios', 'UserController');
-   
+   Route::resource('agendamentos', 'TesteController');
+  
 });
 
 //Route::get('/admin', function() {

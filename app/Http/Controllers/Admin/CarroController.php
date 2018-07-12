@@ -34,6 +34,8 @@ class CarroController extends Controller
         //$dados = Carro::all();
         $dados = Carro::paginate(6);
 
+        $dados->lastItem();
+
         $soma = Carro::sum('preco');
 
         return view('admin.carros_list', ['carros' => $dados, 'soma' => $soma]);

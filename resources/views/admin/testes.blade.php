@@ -20,34 +20,25 @@
           <th> Nome </th>
           <th> E-Mail </th>
           <th> Modelo </th>
+          <th> Id do veiculo <th>
           <th> Data </th>
         </tr>
-      @forelse($carros as $c)
+      @forelse($testes as $t)
         <tr>
-          <td> {{$c->modelo}} </td>
-          <td> {{$c->marca->nome}} </td>
-          <td> {{$c->cor}} </td>
-          <td> {{$c->cor}} </td>
+          <td> {{$t->nome}} </td>
+          <td> {{$t->email}} </td>
+          <td> {{$t->modelo}}</td>
+          <td> {{$t->carro_id}} </td>
+          <td> {{$t->data}} </td>
         </tr>
-        @if ($loop->last)
-          <tr>
-            <td colspan=8> Soma dos preços dos veículos cadastrados R$:
-              {{number_format($soma, 2, ',', '.')}} </td>
-          </tr>
-          <tr>
-            <td colspan=8> Preço Médio dos veículos cadastrados R$:
-              {{number_format($c->avg('preco'), 2, ',', '.')}} </td>
-          </tr>
-        @endif
-      
       @empty
-        <tr><td colspan=8> Não há Agendamenjtos cadastrados ou filtro da pesquisa não
-                           encontrou registros </td></tr>
+      <div class="container">
+          <tr><td colspan=12> Não há Agendamentos cadastrados ou filtro da pesquisa não
+              encontrou registros </td></tr>
+      </div>
       @endforelse
       </table>
-      
-      {{ $carros->links() }}
-      
+
       @endsection
       
       @section('js')

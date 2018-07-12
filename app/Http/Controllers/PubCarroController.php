@@ -17,7 +17,7 @@ class PubCarroController extends Controller
      */
     public function index()
     {
-        $data = Carro::all();
+        $data = Carro::orderBy('created_at', 'desc')->get();
 
         return view('carros.inicio', ['carros' => $data]);
     }

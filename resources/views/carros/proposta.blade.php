@@ -51,6 +51,7 @@
             <form action="{{ route('site.store') }}" method="POST" class="col s12">
                 {{ csrf_field()}}
                 <input type="text" name="carro_id" type="text" value="{{$reg->id}}" hidden >
+                <input type="text" name="modelo" type="text" value="{{$reg->modelo}}" hidden >
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="nome" type="text" name="nome" class="validate">

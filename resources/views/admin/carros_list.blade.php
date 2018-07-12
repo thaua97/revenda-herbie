@@ -19,6 +19,7 @@
 
 <table class="table table-striped">
   <tr>
+    <th> id </th>
     <th> Modelo </th>
     <th> Marca </th>
     <th> Cor </th>
@@ -32,6 +33,7 @@
   </tr>
 @forelse($carros as $c)
   <tr>
+    <td> {{$c->id}} </td>
     <td> {{$c->modelo}} </td>
     <td> {{$c->marca->nome}} </td>
     <td> {{$c->cor}} </td>
