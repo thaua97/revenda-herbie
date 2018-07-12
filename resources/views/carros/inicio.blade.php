@@ -4,6 +4,21 @@
   <div class="container">
     <div class="row">
         <h4>Destaques</h4>
+        <div class="col s12 m8">
+          <div style="padding-top:20px;" class="col s12 m2">
+            <button form="search" type="submit" class="btn-floating waves-effect waves-light red">
+              <i class="material-icons">search</i>
+            </button>
+          </div>
+          <div class="col s12 m10">
+              <form id="search" class="" action="{{ route('carros.search')}}" method="post">
+                  {{ csrf_field() }}
+                  <div class="input-field">
+                    <input id="search" name="pesq" class="validate" type="search">
+                  </div>
+                </form>
+          </div>
+        </div>
         <div class="divider"></div>
         <br>
         @forelse($carros as $d)
@@ -19,7 +34,8 @@
               <a class="btn-floating halfway-fab waves-effect waves-light bgnv" href="{{ route('site.show', $d->id)}}"><i class="material-icons">add</i></a>
             </div>
             <div class="card-content">
-                <span class="card-title">{{$d->modelo}}</span>
+                <span class="card-title">{{$d->modelo}} </span>
+                <span class="card-title">{{$d->preco}} </span>
             </div>
           </div>
         </div>
@@ -46,6 +62,7 @@
             </div>
             <div class="card-content">
                 <span class="card-title">{{$c->modelo}}</span>
+                <span class="green-text">{{$c->preco}}</span>
             </div>
           </div>
         </div>

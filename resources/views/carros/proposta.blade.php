@@ -46,38 +46,31 @@
                     </div>
                 </div>
             </div>
+            <h5 class="grey-text text-darken-1">Solicitar Test Drive</h5>
             <div class="row">
-            <form action="{{route('cadproposta.store')}}" method="POST" class="col s12">
+            <form action="{{ route('site.store') }}" method="POST" class="col s12">
                 {{ csrf_field()}}
+                <input type="text" name="carro_id" type="text" value="{{$reg->id}}" hidden >
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <input id="nome" type="text" name="nome" class="validate">
                         <label for="nome">Nome</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="telefone" type="text" name="telefone" class="validate">
-                        <label for="telefone">Telefone</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="email" name="email" type="email" class="validate">
-                        <input type="text" name="modelo" type="text" value="{{$reg->modelo}" hidden>
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="proposta" name="proposta" class="materialize-textarea"></textarea>
-                        <label for="proposta">Proposta</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
+                    <div class="input-field col s12">         
+                        <input id="data" type="date" name="data" class="datepicker">
+                        <label for="data">Data do teste</label>
                     </div>
                 </div>
                 <div class="row center-align">
-                    <input class="btn btn-flat block" type="submit" value="Enviar Proposta">
+                    <input class="btn btn-flat block" type="submit" value="enviar">
                 </div>
             </form>
             </div>
@@ -85,3 +78,8 @@
     </div>
 </div>
 @endsection
+<script>
+     $(document).ready(function(){
+        $('.datepicker').datepicker();
+    });
+</script>

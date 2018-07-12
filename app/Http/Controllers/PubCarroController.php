@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Carro;
 use App\Marca;
+use App\Teste;
 
 class PubCarroController extends Controller
 {
@@ -36,5 +37,27 @@ class PubCarroController extends Controller
 
         return view('carros.proposta', ['reg' => $reg, 'marcas' => $marcas,
                                           'comb' => $combustiveis]);
+    }
+    public function store(Request $request)
+    {
+        // obtém todos os campos do formulário
+        $dados = $request->all();
+
+        $inc = Teste::create($dados);
+
+        if ($inc) {
+            return redirect()->route('site.index')
+                   ->with('status', $request->modelo . ' Teste Driver cadastrado com sucesso!');
+        }
+    }
+
+    public function search(Request $request)
+    {
+
+      $data = Carro::where('preco', 'like',
+                  '%'.$request->pesq.'%')->get();
+
+        return view('carros.inicio', ['carros' => $data, 'pesq' => $request->pesq]);
+
     }
 }

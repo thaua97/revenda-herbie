@@ -38,16 +38,14 @@
         <div class="container">
             <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4"></p>
+                <h5 class="white-text">Quem somos</h5>
+                <p class="grey-text text-lighten-4"> Somos uma empresa de revenda de carros atuando desde 2011 na região sul  e em breve no mundo todo.</p>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="">Link 4</a></li>
+                    <li><a class="grey-text text-lighten-3" target="_BLANK" href="https://github.com/thaua97/">Git Hub</a></li>
+                    <li><a class="grey-text text-lighten-3" target="_BLANK" href="https://github.com/edeciofernando">Gib Edecio</a></li>
                 </ul>
             </div>
             </div>

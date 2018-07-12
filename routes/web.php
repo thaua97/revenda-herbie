@@ -22,7 +22,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('site', 'PubCarroController');
-<<<<<<< HEAD
 Route::resource('proposta', 'PropostasController');
 
 Route::get('/wscarro/{id?}', 'wsController@wsCarro');
@@ -39,6 +38,5 @@ Route::get('/rel', function(){
 
 Route::get('relcarros', 'relatController@relcarros');
 
-=======
-Route::resource('cadproposta', 'PropostasController');
->>>>>>> ebbb9a8259219899eb50f6d2a5d84d8795818e0b
+Route::post('carrossearch', 'PubCarroController@search')->name('carros.search');
+

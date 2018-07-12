@@ -129,6 +129,11 @@ return [
                     'text' => 'Usuarios',
                     'icon' => 'user',
                     'url'  => 'admin/usuarios',
+                ],
+                [
+                    'text' => 'Agendamentos',
+                    'icon' =>  'calendar',
+                    'url' => 'admin/agendamentos',
                 ]
             ],
         ],
@@ -143,11 +148,7 @@ return [
                     'url'  => 'admin/carrosgraf',
                 ],
                 [
-                    'text' => 'Novos Clientes',
-                    'url'  => '#',
-                ],
-                [
-                    'text' => 'Propostas Mensais',
+                    'text' => 'Agendamentos',
                     'url'  => '#',
                 ],
             ],
